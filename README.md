@@ -47,3 +47,4 @@ This project develops a voice-activated cooking assistant to classify 7 audio co
 ## Deliverables
 - Notebook: `LL_Final_Project (2).ipynb`
 - Visualizations: `audio_metadata.csv`, `duration_distribution.png`, `sample_waveforms.png`, `accuracy_per_fold.png`, `f1_per_fold.png`, `final_accuracy_bar.png`
+- Project report: `LL Final Project Report_ CUISINARY`
