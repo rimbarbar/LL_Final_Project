@@ -3,6 +3,21 @@
 ## Overview
 This project develops a voice-activated cooking assistant to classify 7 audio commands (`startrecipe`, `nextstep`, `repeatstep`, `timer`, `substitute`, `scale`, `done`) using the `facebook/wav2vec2-base` model. The dataset contains 70 audio clips (10 per class), recorded as `.m4a` and converted to WAV.
 
+## Repository Structure
+- **docs/**: Project report
+  - `report.pdf`: Summarizes problem, data, methods, and results.
+- **notebooks/**: Jupyter notebook
+  - `audio_classification.ipynb`: Colab notebook with preprocessing, EDA, and training.
+- **eda/**: Exploratory data analysis outputs
+  - `audio_metadata.csv`: Audio clip metadata (duration, sample rate, class).
+  - `duration_distribution.png`: Histogram of clip durations.
+  - `sample_waveforms.png`: Waveforms for each command.
+  - `accuracy_per_fold.png`: Accuracy per epoch across folds.
+  - `f1_per_fold.png`: F1 score per epoch across folds.
+  - `final_accuracy_bar.png`: Final accuracy per fold (mean 41.79%).
+- **data/**: Audio dataset
+  - `data (1).zip`: Zipped WAV files (70 clips).
+
 ## Dataset
 - **Source**: 70 audio clips in `/content/LL_final_project/`, organized into `/content/data/<command>/`.
 - **EDA**:
@@ -27,16 +42,16 @@ This project develops a voice-activated cooking assistant to classify 7 audio co
   - Fold 3: 42.86%.
   - Fold 4: 57.14%.
   - Fold 5: 14.29% (no learning).
+  - - See `docs/report.pdf` for details.
 - **Visualizations**:
   - Accuracy/F1 per epoch: Fold 2 peaks at 78.57%, others stagnate.
   - Final accuracy bar plot: High variance (14.29%–78.57%).
 - **Insights**: Small dataset and poor validation splits limit performance. Fold 2’s success suggests potential with more data or stronger augmentations.
 
 ## Setup
-1. Clone the repo
-2. Install dependencies: `pip install transformers datasets audiomentations pydub seaborn matplotlib numpy scikit-learn`
-3. Run the notebook: `LL_Final_Project (2).ipynb` in Google Colab.
-4. Data: Place `.m4a` files in `/content/LL_final_project/`.
+1. Clone: `git clone https://github.com/rimbarbar/LL_Final_Project.git`
+2. Install: `pip install transformers datasets audiomentations pydub seaborn matplotlib numpy scikit-learn`
+3. Run: Open `notebooks/audio_classification.ipynb` in Colab.
 
 ## Future Work
 - Collect more data (100+) to improve generalization.
@@ -45,6 +60,6 @@ This project develops a voice-activated cooking assistant to classify 7 audio co
 - Deploy as a Streamlit app for real-time command recognition.
 
 ## Deliverables
-- Notebook: `LL_Final_Project (2).ipynb`
+- Notebook: `audio_classification.ipynb`
 - Visualizations: `audio_metadata.csv`, `duration_distribution.png`, `sample_waveforms.png`, `accuracy_per_fold.png`, `f1_per_fold.png`, `final_accuracy_bar.png`
 - Project report: `LL Final Project Report_ CUISINARY`
